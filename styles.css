@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.login-link {
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #000000;
+    box-shadow: inset 0 0 0 5px #000000, inset 0 0 0 1px #fff;
+    border-radius: 9px;
+}
+
+.login-link:hover {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 5px #ffffff, inset 0 0 0 1px #ffffff;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #739CDE;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #2F48A3;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.field {
+    width: 150px;
+    height: 150px;
+    background-color: #739CDE;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, background-image 0.3s;
+    background-size: cover;
+    background-position: center;
+}
+
+.field:hover {
+    background-color: #2F48A3;
+}
+
+.code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#codeInput {
+    width: 200px;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    background-color: #739CDE;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2F48A3;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.back-arrow:hover {
+    color: #2F48A3;
+}
+
+.admin-panel {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-panel .panel-box {
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.admin-panel div {
+    margin-bottom: 10px;
+}
+
+.color-option {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.success-text {
+    color: gold;
+    font-size: 2em;
+}

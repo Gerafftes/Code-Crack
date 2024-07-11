@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-Crack</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <a href="login.html" class="login-link">Login</a>
+    </div>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <h1>Codeeingabe</h1>
+    <div class="container">
+        <div class="field" data-code="9876" onclick="redirectToCodePage(this)">Verteidigung</div>
+        <div class="field" data-code="5432" onclick="redirectToCodePage(this)">Internet</div>
+        <div class="field" data-code="1098" onclick="redirectToCodePage(this)">Kühler</div>
+        <div class="field" data-code="7654" onclick="redirectToCodePage(this)">GPU</div>
+        <div class="field" data-code="3210" onclick="redirectToCodePage(this)">Festplatte</div>
+        <div class="field" data-code="6543" onclick="redirectToCodePage(this)">CPU</div>
+    </div>
+    <div class="admin-panel" style="display:none;">
+        <div class="back-arrow" onclick="logoutAndGoBack()">&larr;</div>
+        <h3>Admin Einstellungen</h3>
+        <div class="panel-box">
+            <div>
+                <label for="field-number">Feld:</label>
+                <select id="field-number">
+                    <option value="1">Verteidigung</option>
+                    <option value="2">Internet</option>
+                    <option value="3">Kühler</option>
+                    <option value="4">GPU</option>
+                    <option value="5">Festplatte</option>
+                    <option value="6">CPU</option>
+                </select>
+            </div>
+            <div>
+                <label for="new-code">Neuer Code:</label>
+                <input type="text" id="new-code" maxlength="4">
+            </div>
+            <div>
+                <label for="new-color">Neue Farbe:</label>
+                <input type="color" id="new-color">
+            </div>
+            <div>
+                <label for="hexInput">Hex-Code:</label>
+                <input type="text" id="hexInput" placeholder="Hex-Code eingeben">
+                <button onclick="changeColorByHex()">Ändern</button>
+            </div>
+            <button onclick="updateField()">Änderungen speichern</button>
+        </div>
+    </div>
+    <div id="success-message" class="success-message" style="display:none;">
+        <h2 class="success-text">Du hast es geschafft! ★★★★★</h2>
+        <button onclick="resetGame()">Nochmal spielen</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- ______     ____
+    /\/\/\/\   | "* \
+  <|\/\/\/\/|_/  /__/
+   |____________/
+   |_|_|   /_/_/
+-->
