@@ -1,39 +1,19 @@
-function redirectToCodePage(element) {
-    const code = element.getAttribute('data-code');
-    sessionStorage.setItem('expectedCode', code);
-    window.location.href = "code.html";
-}
+const fields = [
+    { title: 'Verteidigung', code: '3892' },
+    { title: 'Internet', code: '5082' },
+    { title: 'Kühler', code: '7418' },
+    { title: 'GPU', code: '4285' },
+    { title: 'Festplatte', code: '1010' },
+    { title: 'CPU', code: '4015' },
+];
 
 document.addEventListener("DOMContentLoaded", () => {
     const isAdmin = sessionStorage.getItem('isAdmin');
     if (isAdmin) {
         document.querySelector('.admin-panel').style.display = 'flex';
+        applyFieldColors();
     } else {
-        const expectedCode = sessionStorage.getItem('expectedCode');
-        if (expectedCode) {
-            const inputField = document.getElementById('codeInput');
-            const submitButton = document.querySelector('button');
-
-            function checkCode() {
-                const inputCode = inputField.value;
-                if (inputCode === expectedCode) {
-                    alert("Code richtig!");
-                    sessionStorage.removeItem('expectedCode');
-                    addCorrectCode(expectedCode);
-                    window.location.href = "index.html";
-                } else {
-                    alert("Code falsch. Bitte versuche es erneut.");
-                }
-            }
-
-            submitButton.addEventListener('click', checkCode);
-
-            inputField.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    checkCode();
-                }
-            });
-        }
+        showCurrentField();
     }
 
     const savedColor = readCookie('selectedColor');
@@ -41,8 +21,38 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.backgroundColor = savedColor;
     }
 
+    applyFieldColors();
     checkAllCodesEntered();
 });
+
+function showCurrentField() {
+    let correctCodes = JSON.parse(localStorage.getItem('correctCodes')) || [];
+    let currentIndex = correctCodes.length;
+
+    for (let i = 1; i <= fields.length; i++) {
+        document.getElementById(`field-${i}`).style.display = 'none';
+    }
+
+    if (currentIndex < fields.length) {
+        document.getElementById(`field-${currentIndex + 1}`).style.display = 'flex';
+    } else {
+        checkAllCodesEntered();
+    }
+}
+
+function checkCode(fieldIndex) {
+    const inputCode = document.getElementById(`codeInput-${fieldIndex}`).value;
+    const expectedCode = fields[fieldIndex - 1].code;
+
+    if (inputCode === expectedCode) {
+        alert("Code richtig!");
+        addCorrectCode(expectedCode);
+        document.getElementById(`field-${fieldIndex}`).style.display = 'none';
+        showCurrentField();
+    } else {
+        alert("Code falsch. Bitte versuche es erneut.");
+    }
+}
 
 function goBack() {
     window.location.href = "index.html";
@@ -71,13 +81,36 @@ function updateField() {
     const newColor = document.getElementById('new-color').value;
 
     if (newCode.length === 4) {
-        const field = document.querySelector(`.field:nth-child(${fieldNumber})`);
+        fields[fieldNumber - 1].code = newCode;
+        saveFieldData();
+        const field = document.querySelector(`#field-${fieldNumber}`);
         field.setAttribute('data-code', newCode);
         field.style.backgroundColor = newColor;
+        saveFieldColor(fieldNumber, newColor);
         alert("Änderungen gespeichert!");
     } else {
         alert("Der Code muss 4-stellig sein.");
     }
+}
+
+function saveFieldColor(fieldNumber, color) {
+    let fieldColors = JSON.parse(localStorage.getItem('fieldColors')) || {};
+    fieldColors[fieldNumber] = color;
+    localStorage.setItem('fieldColors', JSON.stringify(fieldColors));
+}
+
+function applyFieldColors() {
+    const fieldColors = JSON.parse(localStorage.getItem('fieldColors')) || {};
+    for (const fieldNumber in fieldColors) {
+        const field = document.querySelector(`#field-${fieldNumber}`);
+        if (field) {
+            field.style.backgroundColor = fieldColors[fieldNumber];
+        }
+    }
+}
+
+function saveFieldData() {
+    localStorage.setItem('fields', JSON.stringify(fields));
 }
 
 function changeColorByHex() {
@@ -122,22 +155,22 @@ function addCorrectCode(code) {
 
 function checkAllCodesEntered() {
     let correctCodes = JSON.parse(localStorage.getItem('correctCodes')) || [];
-    if (correctCodes.length === 6) {
+    if (correctCodes.length === fields.length) {
         document.getElementById('success-message').style.display = 'flex';
     }
 }
 
 function resetGame() {
     localStorage.removeItem('correctCodes');
+    localStorage.removeItem('fieldColors');
     document.getElementById('success-message').style.display = 'none';
+    window.location.href = "index.html";
 }
-
-
-
-
-/*   ______     ____
+/*
+     ______     ____
     /\/\/\/\   | "* \
   <|\/\/\/\/|_/  /__/
    |____________/
    |_|_|   /_/_/
-*/
+
+*/ 
