@@ -69,49 +69,38 @@ body {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 50px;
 }
 
 .field {
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 250px;
     background-color: #739CDE;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    cursor: pointer;
+    margin-bottom: 20px;
     transition: background-color 0.3s, background-image 0.3s;
     background-size: cover;
     background-position: center;
 }
 
-.field:hover {
-    background-color: #2F48A3;
-}
-
-.code-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-#codeInput {
-    width: 200px;
+.field input {
+    margin-top: 10px;
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-radius: 10px;
     border: 1px solid #ccc;
-    margin-bottom: 10px;
 }
 
-button {
+.field button {
+    margin-top: 10px;
     padding: 10px 20px;
     font-size: 1.2em;
     border: none;
@@ -122,7 +111,7 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.field button:hover {
     background-color: #2F48A3;
 }
 
@@ -165,6 +154,22 @@ button:hover {
     cursor: pointer;
 }
 
+.styled-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    background-color: #739CDE;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #2F48A3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .success-message {
     display: flex;
     flex-direction: column;
@@ -176,3 +181,11 @@ button:hover {
     color: gold;
     font-size: 2em;
 }
+/*
+     ______     ____
+    /\/\/\/\   | "* \
+  <|\/\/\/\/|_/  /__/
+   |____________/
+   |_|_|   /_/_/
+
+*/ 
