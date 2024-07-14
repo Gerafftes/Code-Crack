@@ -10,17 +10,37 @@
     <div class="header">
         <a href="login.html" class="login-link">Login</a>
     </div>
-    <h2></h2>
-    <h2></h2>
-    <h2></h2>
-    <h1>Codeeingabe</h1>
-     <div class="container">
-        <div class="field" data-code="3892" onclick="redirectToCodePage(this)">Verteidigung</div>
-        <div class="field" data-code="5082" onclick="redirectToCodePage(this)">Internet</div>
-        <div class="field" data-code="7418" onclick="redirectToCodePage(this)">Kühler</div>
-        <div class="field" data-code="4285" onclick="redirectToCodePage(this)">GPU</div>
-        <div class="field" data-code="1010" onclick="redirectToCodePage(this)">Festplatte</div>
-        <div class="field" data-code="4015" onclick="redirectToCodePage(this)">CPU</div>
+    <div class="container">
+        <div class="field" id="field-1">
+            <h2>Verteidigung</h2>
+            <input type="text" id="codeInput-1" maxlength="4" placeholder="4-stelliger Code">
+            <button onclick="checkCode(1)">Absenden</button>
+        </div>
+        <div class="field" id="field-2" style="display:none;">
+            <h2>Internet</h2>
+            <input type="text" id="codeInput-2" maxlength="4" placeholder="4-stelliger Code">
+            <button onclick="checkCode(2)">Absenden</button>
+        </div>
+        <div class="field" id="field-3" style="display:none;">
+            <h2>Kühler</h2>
+            <input type="text" id="codeInput-3" maxlength="4" placeholder="4-stelliger Code">
+            <button onclick="checkCode(3)">Absenden</button>
+        </div>
+        <div class="field" id="field-4" style="display:none;">
+            <h2>GPU</h2>
+            <input type="text" id="codeInput-4" maxlength="4" placeholder="4-stelliger Code">
+            <button onclick="checkCode(4)">Absenden</button>
+        </div>
+        <div class="field" id="field-5" style="display:none;">
+            <h2>Festplatte</h2>
+            <input type="text" id="codeInput-5" maxlength="4" placeholder="4-stelliger Code">
+            <button onclick="checkCode(5)">Absenden</button>
+        </div>
+        <div class="field" id="field-6" style="display:none;">
+            <h2>CPU</h2>
+            <input type="text" id="codeInput-6" maxlength="4" placeholder="4-stelliger Code">
+            <button onclick="checkCode(6)">Absenden</button>
+        </div>
     </div>
     <div class="admin-panel" style="display:none;">
         <div class="back-arrow" onclick="logoutAndGoBack()">&larr;</div>
@@ -48,20 +68,18 @@
             <div>
                 <label for="hexInput">Hex-Code:</label>
                 <input type="text" id="hexInput" placeholder="Hex-Code eingeben">
-                <button onclick="changeColorByHex()">Ändern</button>
+                <button onclick="changeColorByHex()" class="styled-button">Ändern</button>
             </div>
-            <button onclick="updateField()">Änderungen speichern</button>
+            <button onclick="updateField()" class="styled-button">Änderungen speichern</button>
         </div>
     </div>
     <div id="success-message" class="success-message" style="display:none;">
         <h2 class="success-text">Du hast es geschafft! ★★★★★</h2>
-        <button onclick="resetGame()">Nochmal spielen</button>
+        <button onclick="resetGame()" class="styled-button">Nochmal spielen</button>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
-
 <!-- ______     ____
     /\/\/\/\   | "* \
   <|\/\/\/\/|_/  /__/
