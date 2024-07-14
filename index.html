@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code-Crack</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="header">
@@ -48,7 +49,7 @@
         <div class="panel-box">
             <div>
                 <label for="field-number">Feld:</label>
-                <select id="field-number">
+                <select id="field-number" onchange="showFieldSettings()">
                     <option value="1">Verteidigung</option>
                     <option value="2">Internet</option>
                     <option value="3">Kühler</option>
@@ -66,7 +67,7 @@
                 <input type="color" id="new-color">
             </div>
             <div>
-                <label for="hexInput">Hex-Code für Hintergrund:</label>
+                <label for="hexInput">Hex-Code:</label>
                 <input type="text" id="hexInput" placeholder="Hex-Code eingeben">
                 <button onclick="changeColorByHex()" class="styled-button">Ändern</button>
             </div>
@@ -80,9 +81,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-<!-- ______     ____
-    /\/\/\/\   | "* \
-  <|\/\/\/\/|_/  /__/
-   |____________/
-   |_|_|   /_/_/
--->
