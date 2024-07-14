@@ -1,10 +1,10 @@
 const fields = [
-    { title: 'Verteidigung', code: '3892' },
-    { title: 'Internet', code: '5082' },
-    { title: 'Kühler', code: '7418' },
-    { title: 'GPU', code: '4285' },
-    { title: 'Festplatte', code: '1010' },
-    { title: 'CPU', code: '4015' },
+    { title: 'Verteidigung', code: '1111' },
+    { title: 'Internet', code: '2222' },
+    { title: 'Kühler', code: '3333' },
+    { title: 'GPU', code: '4444' },
+    { title: 'Festplatte', code: '5555' },
+    { title: 'CPU', code: '6666' },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isAdmin) {
         document.querySelector('.admin-panel').style.display = 'flex';
         applyFieldColors();
+        showFieldSettings();
     } else {
         showCurrentField();
     }
@@ -60,18 +61,18 @@ function goBack() {
 
 function logoutAndGoBack() {
     sessionStorage.removeItem('isAdmin');
-    window.location.href = "index.html";
+    showCurrentField();
 }
 
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    if (username === 'Code-Crack' && password === 't847GT4T') {
+    if (username === 'Johann' && password === 'johann') {
         alert("Login erfolgreich!");
         sessionStorage.setItem('isAdmin', 'true');
         window.location.href = "index.html";
     } else {
-        alert("Benutzername oder Passwort falsch");
+        alert("Falscher Benutzername oder Passwort.");
     }
 }
 
@@ -166,6 +167,15 @@ function resetGame() {
     document.getElementById('success-message').style.display = 'none';
     window.location.href = "index.html";
 }
+
+function showFieldSettings() {
+    const fieldNumber = document.getElementById('field-number').value;
+    for (let i = 1; i <= fields.length; i++) {
+        document.getElementById(`field-${i}`).style.display = 'none';
+    }
+    document.getElementById(`field-${fieldNumber}`).style.display = 'flex';
+}
+
 /*
      ______     ____
     /\/\/\/\   | "* \
