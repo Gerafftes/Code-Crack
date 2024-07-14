@@ -8,14 +8,15 @@
 </head>
 <body>
     <div class="back-arrow" onclick="goBack()">&larr;</div>
+    <h2 id="field-title"></h2>
     <div class="code-container">
         <input type="text" id="codeInput" maxlength="4" placeholder="4-stelliger Code">
-        <button>Absenden</button>
+        <button onclick="checkCode()">Absenden</button>
+        <button onclick="nextField()" style="display:none;" id="next-button">Weiter</button>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
 <!-- ______     ____
     /\/\/\/\   | "* \
   <|\/\/\/\/|_/  /__/
