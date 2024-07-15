@@ -3,7 +3,7 @@ const fields = [
     { title: 'Internet', code: '3892' },
     { title: 'Kühler', code: '7418' },
     { title: 'GPU', code: '4285' },
-    { title: 'Festplatte', code: '1010' },
+    { title: 'Festplatte', code: '4292' },
     { title: 'CPU', code: '4015' },
 ];
 
