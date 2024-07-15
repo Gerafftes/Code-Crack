@@ -1,6 +1,6 @@
 const fields = [
-    { title: 'Verteidigung', code: '3892' },
-    { title: 'Internet', code: '5082' },
+    { title: 'Verteidigung', code: '5082' },
+    { title: 'Internet', code: '3892' },
     { title: 'Kühler', code: '7418' },
     { title: 'GPU', code: '4285' },
     { title: 'Festplatte', code: '1010' },
