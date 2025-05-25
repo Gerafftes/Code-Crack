@@ -3,7 +3,7 @@
   <p align="center">
     🧠 A simple school project – a mini escape room fully in the browser.<br />
     Players had to solve tasks and puzzles to earn codes step by step.<br />
-    For learning purposes, everything is stored in plain text: no backend, no database, no user login.<br />
+    For learning purposes, everything is stored in plain text: no backend, no database.<br />
     The focus is on logic, interaction, and transparency – perfect for getting started with web development.
     <br />
     <br />
