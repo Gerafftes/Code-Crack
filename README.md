@@ -1,12 +1,11 @@
 <div align="center">
-  <a href="https://github.com/Gerafftes/Code-Crack">
-    <img src="images/logo.png" alt="Logo" width="100" height="100">
-  </a>
   <h3 align="center">Code-Crack</h3>
   <p align="center">
-    🧠 A simple school project – a mini escape room entirely in the browser.<br />
-    All codes and logic are stored in plain text for full transparency and learning purposes.<br />
-    No backend, no database – just solve puzzles, collect clues, and crack the final code!
+    🧠 A simple school project – a mini escape room fully in the browser.<br />
+    Players had to solve tasks and puzzles to earn codes step by step.<br />
+    For learning purposes, everything is stored in plain text: no backend, no database, no user login.<br />
+    The focus is on logic, interaction, and transparency – perfect for getting started with web development.
+    <br />
     <br />
     <a href="https://github.com/Gerafftes/Code-Crack/wiki"><strong>Explore the docs »</strong></a>
     <br />
