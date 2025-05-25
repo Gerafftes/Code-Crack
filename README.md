@@ -10,7 +10,7 @@
     <a href="https://github.com/Gerafftes/Code-Crack/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Gerafftes/Code-Crack](https://gerafftes.github.io/Code-Crack/">Play Now</a> ·
+    <a href="https://gerafftes.github.io/Code-Crack/">🎮 Play Now</a> ·
     <a href="https://github.com/Gerafftes/Code-Crack/issues/new?labels=bug&template=bug_report.md">Report Bug</a> ·
     <a href="https://github.com/Gerafftes/Code-Crack/issues/new?labels=enhancement&template=feature_request.md">Request Feature</a>
   </p>
