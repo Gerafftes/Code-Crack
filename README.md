@@ -8,7 +8,6 @@
     The focus is on logic, interaction, and transparency – perfect for getting started with web development.
     <br />
     <br />
-    <a href="https://github.com/Gerafftes/Code-Crack/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://gerafftes.github.io/Code-Crack/">🎮 Play Now</a> ·
